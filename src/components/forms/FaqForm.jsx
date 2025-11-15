@@ -1,7 +1,7 @@
 import { useState } from 'react';
 const questions = [
   {
-    id: '01',
+    id: '1',
     question: 'What is your sizing guide and how do I find the right fit?',
     answer: `We provide detailed size charts for each product category (tops, bottoms, dresses, etc.) with measurements in both inches and centimeters. To find your perfect fit:
 - Measure yourself using our measurement guide
@@ -13,7 +13,7 @@ const questions = [
 Still unsure? We offer free exchanges within 30 days if the size doesn't fit perfectly.`,
   },
   {
-    id: '02',
+    id: '2',
     question: 'What is your return and exchange policy?',
     answer: `Returns & Exchanges Made Easy:
 - 30-day return window from delivery date
@@ -30,7 +30,7 @@ How to Return:
 Damaged or defective items? We'll cover all return costs and offer immediate replacement.`,
   },
   {
-    id: '03',
+    id: '3',
     question: 'How long does shipping take and what are the costs?',
     answer: `Domestic Shipping (US):
 - Standard Shipping: 5-7 business days - FREE on orders $75+
@@ -45,7 +45,7 @@ International Shipping:
 Orders placed before 2 PM EST ship same day (Monday-Friday). You'll receive tracking information via email once your order ships.`,
   },
   {
-    id: '04',
+    id: '4',
     question: 'How do I care for my garments to maintain quality?',
     answer: `General Care Instructions:
 - Always check the care label first - it's your best guide
@@ -63,7 +63,7 @@ Fabric-Specific Tips:
 Proper care extends the life of your clothes and keeps them looking new longer.`,
   },
   {
-    id: '05',
+    id: '5',
     question: 'Do you restock sold-out items and how can I be notified?',
     answer: `Restocking Information:
 - Popular items typically restock within 2-4 weeks
@@ -84,7 +84,7 @@ Can't find your size?
 Pro tip: Add items to your wishlist so you can easily check on them later!`,
   },
   {
-    id: '06',
+    id: '6',
     question: 'What payment methods do you accept and is my information secure?',
     answer: `Accepted Payment Methods:
 - Credit Cards: Visa, Mastercard, American Express, Discover
@@ -101,7 +101,7 @@ Your Security is Our Priority:
 We never share your personal information with third parties. Your privacy and security are guaranteed.`,
   },
   {
-    id: '07',
+    id: '7',
     question: 'Do you offer discounts for students, military, or first-time customers?',
     answer: `Special Discounts Available:
 
@@ -130,7 +130,7 @@ Seasonal Promotions:
 Discounts cannot be combined unless specifically stated. Sale items excluded from most discount codes.`,
   },
   {
-    id: '08',
+    id: '8',
     question: 'What makes your clothing sustainable and ethically made?',
     answer: `Our Sustainability Commitment:
 
@@ -219,7 +219,7 @@ const FAQform = () => {
                       setSelectedId(item.id);
                     }}>
                     <p className={`question ${selectedId === item.id ? 'question-active' : ''}`}>
-                      {item.question}
+                      {item.id}.{item.question}
                     </p>
                   </div>
                 ))}
