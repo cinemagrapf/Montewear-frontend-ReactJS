@@ -21,10 +21,15 @@
   border-radius: 15px;
   background: rgba(222, 222, 222, 1);
   padding: 22px 16px;
+  &:hover {
+    cursor: pointer;
+    color: $white-color;
+  }
 }
-// .question-active {
-//   background-color: #536dfe;
-// }
+.question-active {
+  background-color: $highlight-color;
+  color: $white-color;
+}
 .answers-column {
   color: $white-color;
 

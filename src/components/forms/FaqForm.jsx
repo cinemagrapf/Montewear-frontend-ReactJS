@@ -214,9 +214,13 @@ const FAQform = () => {
                 {questions.map((item) => (
                   <div
                     key={item.id}
-                    onClick={() => setAnswer(item.answer) & setSelectedId(item.id)}
-                    className={selectedId === item.id ? 'question-active' : ''}>
-                    <p className="question">{item.question}</p>
+                    onClick={() => {
+                      setAnswer(item.answer);
+                      setSelectedId(item.id);
+                    }}>
+                    <p className={`question ${selectedId === item.id ? 'question-active' : ''}`}>
+                      {item.question}
+                    </p>
                   </div>
                 ))}
               </div>
