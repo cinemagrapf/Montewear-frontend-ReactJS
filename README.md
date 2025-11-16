@@ -28,8 +28,8 @@ This project demonstrates a simple storefront with a stylish UI and structured c
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/cinemagrapf/montewear-2.0.git
-cd montewear-2.0
+git clone https://github.com/cinemagrapf/montewear-frontend-ReactJS
+cd montewear-frontend-ReactJS
 npm install
 npm start
 ```
