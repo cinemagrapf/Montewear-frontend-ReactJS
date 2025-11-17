@@ -87,12 +87,14 @@ const ProductSorting = () => {
         <span className="sort-label">SORT by:</span>
 
         <select
+          name="price"
           value={filters.price}
           onChange={(e) => handleFilterChange('price', e.target.value)}
           className={`filter-dropdown ${!filters.price ? 'placeholder' : ''}`}>
           {filterOptions.price.map((option, index) => (
             <option
               key={option.value}
+              id={`price-option-${option.value || 'default'}`}
               value={option.value}
               className={index === 0 ? 'placeholder-option' : ''}>
               {option.label}
@@ -101,6 +103,7 @@ const ProductSorting = () => {
         </select>
 
         <select
+          name="size"
           value={filters.size}
           onChange={(e) => handleFilterChange('size', e.target.value)}
           className={`filter-dropdown ${!filters.size ? 'placeholder' : ''}`}>
@@ -115,6 +118,7 @@ const ProductSorting = () => {
         </select>
 
         <select
+          name="color"
           value={filters.color}
           onChange={(e) => handleFilterChange('color', e.target.value)}
           className={`filter-dropdown ${!filters.color ? 'placeholder' : ''}`}>
@@ -129,6 +133,7 @@ const ProductSorting = () => {
         </select>
 
         <select
+          name="brand"
           value={filters.brand}
           onChange={(e) => handleFilterChange('brand', e.target.value)}
           className={`filter-dropdown ${!filters.brand ? 'placeholder' : ''}`}>
@@ -143,6 +148,7 @@ const ProductSorting = () => {
         </select>
 
         <select
+          name="material"
           value={filters.material}
           onChange={(e) => handleFilterChange('material', e.target.value)}
           className={`filter-dropdown ${!filters.material ? 'placeholder' : ''}`}>
@@ -157,6 +163,7 @@ const ProductSorting = () => {
         </select>
 
         <select
+          name="style"
           value={filters.style}
           onChange={(e) => handleFilterChange('style', e.target.value)}
           className={`filter-dropdown ${!filters.style ? 'placeholder' : ''}`}>
