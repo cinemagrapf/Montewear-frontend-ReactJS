@@ -8,7 +8,7 @@ function Home() {
     <div className="App">
       <Header />
       <CardSection />
-      <ProductGrid />
+      <ProductGrid currentPage={1} productsPerPage={10} />
       <Footer />
     </div>
   );
