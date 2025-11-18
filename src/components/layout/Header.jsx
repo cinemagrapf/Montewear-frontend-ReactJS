@@ -86,7 +86,6 @@ const Header = () => {
                   <button className="nav-link cart-icon" onClick={() => setShow(true)}>
                     <FontAwesomeIcon icon={faShoppingCart} />
                     {cartItems.length > 0 && <span className="cart-count">{cartItems.length}</span>}
-                    {notifyAdd && <CartNotification />}
                   </button>
                 </li>
               </ul>
