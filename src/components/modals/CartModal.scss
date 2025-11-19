@@ -1,3 +1,5 @@
+@use '@/styles/global-variables' as *;
+
 @keyframes overlayFadeIn {
   from {
     opacity: 0;
@@ -346,7 +348,7 @@
 
 .checkout-btn {
   width: 100%;
-  background: linear-gradient(135deg, #000 0%, #333 100%);
+  background: $highlight-color;
   color: #fff;
   padding: 16px;
   border-radius: 10px;

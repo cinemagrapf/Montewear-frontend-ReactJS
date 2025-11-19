@@ -1,4 +1,4 @@
-/* AuthModal.scss - Modern design with left-side slide animation */
+@use '@/styles/global-variables.scss' as *;
 
 @keyframes overlayFadeIn {
   from {
@@ -264,7 +264,7 @@
   // Submit button
   .btn-primary {
     width: 100%;
-    background: linear-gradient(135deg, #000 0%, #333 100%);
+    background-color: $highlight-color;
     border: none;
     padding: 14px;
     border-radius: 8px;
@@ -321,7 +321,8 @@
     letter-spacing: 0.5px;
 
     &:hover {
-      background: #000;
+      background-color: $highlight-color-3;
+      border-color: $highlight-color-3;
       color: #fff;
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
