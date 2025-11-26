@@ -8,8 +8,9 @@ import './Products.scss';
 
 function Products() {
   const [page, setPage] = useState(1);
+  const [category, setCategory] = useState('men');
 
-  // Example: how many products per page
+  // Example: how many products per page(get product count from backend later)
   const productsPerPage = 20;
 
   return (
@@ -17,9 +18,9 @@ function Products() {
       <Header />
 
       <div className="products-page">
-        <ProductCatalog />
+        <ProductCatalog onCategoryChange={setCategory} />
 
-        <ProductGrid currentPage={page} productsPerPage={productsPerPage} />
+        <ProductGrid currentPage={page} productsPerPage={productsPerPage} category={category} />
 
         <ProductPagination
           currentPage={page}

@@ -3,11 +3,11 @@ import SearchBar from '../ui/SearchBar.jsx';
 import ProductSorting from './product-page/ProductSorting.jsx';
 import './ProductCatalog.scss';
 
-const ProductCatalog = () => {
+const ProductCatalog = ({ onCategoryChange }) => {
   return (
     <div className="product-catalog-container">
       <div className="top-bar">
-        <ProductCategories />
+        <ProductCategories onCategoryChange={onCategoryChange} />
         <SearchBar />
       </div>
 

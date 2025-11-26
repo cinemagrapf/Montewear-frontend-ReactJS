@@ -1,15 +1,15 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './ProductCategories.scss';
 
-const ProductCategories = () => {
+const ProductCategories = ({ onCategoryChange }) => {
   const [selected, setSelected] = useState(0);
   const [sliderStyle, setSliderStyle] = useState({});
   const segmentRefs = useRef([]);
 
   const segments = [
-    { id: 'mens', label: "MEN'S" },
-    { id: 'womens', label: "WOMEN'S" },
-    { id: 'kids', label: "KID'S" },
+    { id: 'men', label: "MEN'S" },
+    { id: 'women', label: "WOMEN'S" },
+    { id: 'kid', label: "KID'S" },
   ];
 
   useEffect(() => {
@@ -36,7 +36,11 @@ const ProductCategories = () => {
           key={segment.id}
           ref={(el) => (segmentRefs.current[index] = el)}
           className={`segment ${selected === index ? 'active' : ''}`}
-          onClick={() => setSelected(index)}>
+          onClick={() => {
+            setSelected(index);
+            // console.log(segment.id);
+            onCategoryChange(segment.id);
+          }}>
           {segment.label}
         </button>
       ))}

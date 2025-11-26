@@ -73,6 +73,7 @@ const products = [
     oldPrice: 210.0,
     sizes: ['S', 'M', 'L'],
     colors: ['Cyan', 'Magenta'],
+    category: 'Men',
   },
   {
     id: '007',
@@ -82,6 +83,7 @@ const products = [
     oldPrice: 145.0,
     sizes: ['M', 'L', 'XL'],
     colors: ['Teal', 'Navy'],
+    category: 'Women',
   },
   {
     id: '008',
@@ -91,6 +93,7 @@ const products = [
     oldPrice: 175.0,
     sizes: ['S', 'M', 'L', 'XL'],
     colors: ['Olive', 'Maroon'],
+    category: 'Women',
   },
   {
     id: '009',
@@ -99,6 +102,7 @@ const products = [
     price: 105.0,
     sizes: ['S', 'M', 'L'],
     colors: ['Lime', 'Coral'],
+    category: 'Kid',
   },
   {
     id: '010',
@@ -107,14 +111,19 @@ const products = [
     price: 125.0,
     sizes: ['M', 'L', 'XL', 'XXL'],
     colors: ['Silver', 'Gold'],
+    category: 'Men',
   },
 ];
 
-const ProductGrid = ({ currentPage, productsPerPage }) => {
+const ProductGrid = ({ currentPage, productsPerPage, category }) => {
+  // Filtering by category
+  const filteredProducts = products.filter((p) =>
+    category ? p.category?.toLowerCase() === category.toLowerCase() : true,
+  );
   const start = (currentPage - 1) * productsPerPage;
   const end = start + productsPerPage;
 
-  const visibleProducts = products.slice(start, end);
+  const visibleProducts = filteredProducts.slice(start, end);
 
   return (
     <div className="product-grid-container mx-auto my-3">
@@ -129,6 +138,11 @@ const ProductGrid = ({ currentPage, productsPerPage }) => {
               oldPrice={product.oldPrice}
               // color={product.colors}
               sizes={product.sizes}
+              // Filtering props
+              category={product.category}
+              brand={product.brand}
+              material={product.material}
+              style={product.style}
             />
           </Col>
         ))}
