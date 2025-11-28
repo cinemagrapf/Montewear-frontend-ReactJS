@@ -26,7 +26,11 @@ function Products() {
       <Header />
 
       <div className="products-page">
-        <ProductCatalog onCategoryChange={setCategory} onFilterChange={setSortFilters} />
+        <ProductCatalog
+          onCategoryChange={setCategory}
+          onFilterChange={setSortFilters}
+          onPageChange={setPage}
+        />
 
         <ProductGrid
           currentPage={page}

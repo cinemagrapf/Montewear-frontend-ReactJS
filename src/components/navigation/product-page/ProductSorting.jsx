@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './ProductSorting.scss';
 import { filterOptions } from '../../../data/FilterOptions.js';
 
-const ProductSorting = ({ onFilterChange }) => {
+const ProductSorting = ({ onFilterChange, onPageChange }) => {
   const [filters, setFilters] = useState({
     price: '',
     size: '',
@@ -13,6 +13,7 @@ const ProductSorting = ({ onFilterChange }) => {
   });
 
   const handleFilterChange = (filterType, value) => {
+    onPageChange(1);
     setFilters((prev) => ({
       ...prev,
       [filterType]: value,
@@ -22,6 +23,7 @@ const ProductSorting = ({ onFilterChange }) => {
   // Reset filters
   const handleResetFilters = () => {
     setFilters({ price: '', size: '', color: '', brand: '', material: '', style: '' });
+    onPageChange(1);
   };
 
   useEffect(() => {

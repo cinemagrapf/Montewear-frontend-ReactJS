@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import './ProductCategories.scss';
 
-const ProductCategories = ({ onCategoryChange }) => {
+const ProductCategories = ({ onCategoryChange, onPageChange }) => {
   const [selected, setSelected] = useState(0);
   const [sliderStyle, setSliderStyle] = useState({});
   const segmentRefs = useRef([]);
@@ -40,6 +40,7 @@ const ProductCategories = ({ onCategoryChange }) => {
             setSelected(index);
             // console.log(segment.id);
             onCategoryChange(segment.id);
+            onPageChange(1);
           }}>
           {segment.label}
         </button>
