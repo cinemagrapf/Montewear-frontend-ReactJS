@@ -9,6 +9,14 @@ import './Products.scss';
 function Products() {
   const [page, setPage] = useState(1);
   const [category, setCategory] = useState('men');
+  const [sortFilters, setSortFilters] = useState({
+    price: '',
+    size: '',
+    color: '',
+    brand: '',
+    material: '',
+    style: '',
+  });
 
   // Example: how many products per page(get product count from backend later)
   const productsPerPage = 20;
@@ -18,9 +26,14 @@ function Products() {
       <Header />
 
       <div className="products-page">
-        <ProductCatalog onCategoryChange={setCategory} />
+        <ProductCatalog onCategoryChange={setCategory} onFilterChange={setSortFilters} />
 
-        <ProductGrid currentPage={page} productsPerPage={productsPerPage} category={category} />
+        <ProductGrid
+          currentPage={page}
+          productsPerPage={productsPerPage}
+          category={category}
+          sortFilters={sortFilters}
+        />
 
         <ProductPagination
           currentPage={page}

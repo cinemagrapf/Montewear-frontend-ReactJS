@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ProductSorting.scss';
 import { filterOptions } from '../../../data/FilterOptions.js';
 
-const ProductSorting = () => {
+const ProductSorting = ({ onFilterChange }) => {
   const [filters, setFilters] = useState({
     price: '',
     size: '',
@@ -19,6 +19,15 @@ const ProductSorting = () => {
     }));
   };
 
+  // Reset filters
+  const handleResetFilters = () => {
+    setFilters({ price: '', size: '', color: '', brand: '', material: '', style: '' });
+  };
+
+  useEffect(() => {
+    onFilterChange(filters);
+  }, [filters, onFilterChange]);
+
   return (
     <div className="sort-module">
       <div className="filters-container">
@@ -27,7 +36,9 @@ const ProductSorting = () => {
         <select
           name="price"
           value={filters.price}
-          onChange={(e) => handleFilterChange('price', e.target.value)}
+          onChange={(e) => {
+            handleFilterChange('price', e.target.value);
+          }}
           className={`filter-dropdown ${!filters.price ? 'placeholder' : ''}`}>
           <option value="" className="placeholder-option">
             Price
@@ -115,7 +126,9 @@ const ProductSorting = () => {
           ))}
         </select>
 
-        <button className="apply-filters-btn">Apply Filters</button>
+        <button className="reset-filters-btn" onClick={handleResetFilters}>
+          Reset Filters
+        </button>
       </div>
     </div>
   );

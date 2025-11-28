@@ -3,7 +3,7 @@ import SearchBar from '../ui/SearchBar.jsx';
 import ProductSorting from './product-page/ProductSorting.jsx';
 import './ProductCatalog.scss';
 
-const ProductCatalog = ({ onCategoryChange }) => {
+const ProductCatalog = ({ onCategoryChange, onFilterChange }) => {
   return (
     <div className="product-catalog-container">
       <div className="top-bar">
@@ -12,7 +12,7 @@ const ProductCatalog = ({ onCategoryChange }) => {
       </div>
 
       <div className="sorting-wrapper">
-        <ProductSorting />
+        <ProductSorting onFilterChange={onFilterChange} />
       </div>
     </div>
   );
