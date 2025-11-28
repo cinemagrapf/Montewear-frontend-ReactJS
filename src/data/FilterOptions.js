@@ -1,6 +1,5 @@
 export const filterOptions = {
   price: [
-    { value: '', label: 'Price' },
     { value: 'low-high', label: 'Low to High' },
     { value: 'high-low', label: 'High to Low' },
     { value: 'under-50', label: 'Under $50' },
@@ -9,7 +8,6 @@ export const filterOptions = {
     { value: 'over-200', label: 'Over $200' },
   ],
   size: [
-    { value: '', label: 'Size' },
     { value: 'xs', label: 'XS' },
     { value: 's', label: 'S' },
     { value: 'm', label: 'M' },
@@ -18,7 +16,6 @@ export const filterOptions = {
     { value: 'xxl', label: 'XXL' },
   ],
   color: [
-    { value: '', label: 'Color' },
     { value: 'black', label: 'Black' },
     { value: 'white', label: 'White' },
     { value: 'gray', label: 'Gray' },
@@ -30,7 +27,6 @@ export const filterOptions = {
     { value: 'beige', label: 'Beige' },
   ],
   brand: [
-    { value: '', label: 'Brand' },
     { value: 'stussy', label: 'Stüssy' },
     { value: 'supreme', label: 'Supreme' },
     { value: 'acronym', label: 'Acronym' },
@@ -40,7 +36,6 @@ export const filterOptions = {
     { value: 'uniqlo', label: 'Uniqlo' },
   ],
   material: [
-    { value: '', label: 'Material' },
     { value: 'cotton', label: 'Cotton' },
     { value: 'polyester', label: 'Polyester' },
     { value: 'wool', label: 'Wool' },
@@ -50,7 +45,6 @@ export const filterOptions = {
     { value: 'leather', label: 'Leather' },
   ],
   style: [
-    { value: '', label: 'Style' },
     { value: 'streetwear', label: 'Streetwear' },
     { value: 'techwear', label: 'Techwear' },
     { value: 'casual', label: 'Casual' },
