@@ -1,7 +1,7 @@
 import './ProductGrid.scss';
 import { Col } from 'react-bootstrap';
 import ProductCard from './ProductCard.jsx';
-import { products } from '../../data/products.js';
+import { products } from '../../data/ProductList.js';
 
 const ProductGrid = ({ currentPage, productsPerPage, category, sortFilters }) => {
   let result = products;
