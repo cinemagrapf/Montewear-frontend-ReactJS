@@ -18,7 +18,7 @@ export const products = [
     const colors = ['black', 'white', 'gray', 'blue', 'red', 'green', 'yellow', 'pink', 'beige'];
     const sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
 
-    const price = Number((20 + ((i * 1.73) % 160)).toFixed(2));
+    const price = Number((20 + ((i * 1.73) % 200)).toFixed(2));
 
     // Every 5rd product has oldPrice
     let oldPrice;

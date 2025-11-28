@@ -10,12 +10,25 @@ const ProductGrid = ({ currentPage, productsPerPage, category, sortFilters }) =>
   if (category) {
     result = result.filter((p) => p.category?.toLowerCase() === category.toLowerCase());
   }
+  // Filtering by searching
+  // if (){
+
+  // }
   // Sorting by filters
   if (sortFilters) {
-    const { size, color, brand, material, style } = sortFilters; // priceMin, priceMax
+    const { size, color, brand, material, style, price } = sortFilters; // priceMin, priceMax
     {
       result = result
-        // .filter() //by price
+        .filter((p) => {
+          if (!price) return true;
+          if (price === 'low-high') return products.sort((a, b) => a.price - b.price);
+          if (price === 'high-low') return products.sort((a, b) => b.price - a.price);
+          if (price === 'under-50') return p.price < 50;
+          if (price === '50-100') return p.price >= 50 && p.price <= 100;
+          if (price === '100-200') return p.price >= 100 && p.price <= 200;
+          if (price === 'over-200') return p.price > 200;
+          return true;
+        })
         .filter((p) => !size || p.sizes?.includes(size.toUpperCase()))
         .filter((p) => !color || p.colors?.some((c) => c.toLowerCase() === color.toLowerCase()))
         .filter((p) => !brand || p.brand?.toLowerCase() === brand.toLowerCase())
