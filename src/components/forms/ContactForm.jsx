@@ -8,9 +8,9 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Submitted full phone:', fullPhone);
-    // send `fullPhone` to backend here
+    console.log('Submitted full phone:', fullPhone); // send `fullPhone` to backend here
   };
+
   return (
     <div className="form-container mx-auto">
       <div className="row justify-content-center">
@@ -79,7 +79,7 @@ const ContactForm = () => {
 
                   {/* Submit Button */}
                   <div className="d-grid">
-                    <button type="submit" className="btn btn-custom">
+                    <button type="submit" className="btn btn-custom" onClick={handleSubmit}>
                       Get in touch
                     </button>
                   </div>

@@ -54,6 +54,7 @@ const PhoneNumberInput = ({ onChange }) => {
       {/* Country code & flag */}
       <input
         type="tel"
+        id="countrycode"
         ref={countryRef}
         style={{ flex: '1', width: '95px', pointerEvents: 'none' }}
         className="form-control"
@@ -62,10 +63,12 @@ const PhoneNumberInput = ({ onChange }) => {
       {/* Number only */}
       <input
         type="tel"
+        id="phonenumber"
         ref={numberRef}
         style={{ flex: '2', width: '85%' }}
         className="form-control"
         placeholder="Phone number(optional)"
+        value={phoneNumber}
         onChange={handlePhoneChange}
         autoComplete="tel"
       />
