@@ -49,7 +49,7 @@ export const filterOptions = {
     { value: 'techwear', label: 'Techwear' },
     { value: 'casual', label: 'Casual' },
     { value: 'steampunk', label: 'Steampunk' },
-    { value: 'formal', label: 'Formal' },
+    { value: 'corporate', label: 'Formal' },
     { value: 'sporty', label: 'Sporty' },
     { value: 'vintage', label: 'Vintage' },
     { value: 'minimalist', label: 'Minimalist' },

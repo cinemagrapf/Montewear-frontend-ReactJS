@@ -14,7 +14,7 @@ import techwearStyle from '../../assets/images/cards/techwear-nobg.png';
 import corporateStyle from '../../assets/images/cards/corporate-nobg.png';
 import steampunkStyle from '../../assets/images/cards/steampunk-nobg.png';
 
-const CardSection = () => {
+const CardSection = ({ onChoiceChange }) => {
   const [title, setTitle] = useState('Pick Your Side');
 
   // Card data}
@@ -49,7 +49,10 @@ const CardSection = () => {
           <div
             key={index}
             className={`cards ${card.name.toLowerCase()}-card`}
-            onClick={() => setTitle(card.name)}
+            onClick={() => {
+              setTitle(card.name);
+              onChoiceChange(card.name.toLowerCase());
+            }}
             style={{
               backgroundImage: `url(${
                 card.background_image[Object.keys(card.background_image)[0]]

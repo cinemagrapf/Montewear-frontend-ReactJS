@@ -10,7 +10,7 @@ export const products = [
       'techwear',
       'casual',
       'steampunk',
-      'formal',
+      'corporate',
       'sporty',
       'vintage',
       'minimalist',
@@ -22,7 +22,7 @@ export const products = [
 
     // Every 5rd product has oldPrice
     let oldPrice;
-    if (i % 4 === 0) {
+    if (i % 4.5 === 0) {
       const increasePercent = 25 + 1.2 * 20;
       oldPrice = Number((price * (1 + increasePercent / 100)).toFixed(2));
     }

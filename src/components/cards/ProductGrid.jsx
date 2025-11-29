@@ -3,9 +3,20 @@ import { Col } from 'react-bootstrap';
 import ProductCard from './ProductCard.jsx';
 import { products } from '../../data/ProductList.js';
 
-const ProductGrid = ({ currentPage, productsPerPage, category, sortFilters, searchText }) => {
+const ProductGrid = ({
+  currentPage,
+  productsPerPage,
+  category,
+  sortFilters,
+  searchText,
+  choice,
+}) => {
   let result = products;
 
+  // Filtering by choice(Home page)
+  if (choice) {
+    result = result.filter((p) => p.style.toLowerCase().includes(choice));
+  }
   // Filtering by category
   if (category) {
     result = result.filter((p) => p.category?.toLowerCase() === category.toLowerCase());
